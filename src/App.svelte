@@ -1,5 +1,6 @@
 <script>
-  import { surah, ayahFrom, ayahTo } from "./lib/stores.svelte";
+  import "./app.css";
+
   let selected = false;
   let finishedLearning = false;
 
