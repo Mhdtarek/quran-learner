@@ -65,7 +65,6 @@
     currentAyah = currentAyah + 1;
     currentAudioLoaded = false; // we do this so the audio can reset
 
-    getAyah(currentSurah, currentAyah);
     getAyahAudio(currentSurah, currentAyah);
   }
 
@@ -109,7 +108,6 @@
           src={getSurahImages(currentSurah, currentAyah)}
           alt="You don't have internet"
         />
-        <p>{currentAyahText}</p>
         <button on:click={() => currentRound++}>Test Yourself</button>
       {/if}
       {#if currentRound == 2}
