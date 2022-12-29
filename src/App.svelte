@@ -11,10 +11,10 @@
   let currentAudioLoaded = false;
   let currentSurah = 0;
   let currentAyah = 0;
-  let currentAyahNumber = 0;
-  let currentAyahText = "";
   let currentRound = 0;
   let currentAyahAudioPathUrl = "";
+
+  let ayahsLearnt = 0;
 
   function play() {
     // @ts-ignore
@@ -50,11 +50,13 @@
 
   function nextAyah() {
     if (currentAyah - 1 == ayahToSelect) finished();
+    if (currentAyah == ayahToSelect) finished();
     console.log(currentAyah);
 
     currentRound = 0;
     currentAyah = currentAyah + 1;
     currentAudioLoaded = false; // we do this so the audio can reset
+    ayahsLearnt++;
 
     getAyahAudio(currentSurah, currentAyah);
   }
@@ -112,6 +114,7 @@
     {/if}
     {#if finishedLearning}
       <h2>Finished Learning</h2>
+      <p>Ayahs learnt: {ayahsLearnt}</p>
       <button on:click={() => location.reload()}>Play Again</button>
     {/if}
   {/if}
