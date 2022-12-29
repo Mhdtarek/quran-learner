@@ -28,17 +28,7 @@
     currentAyah = ayahFromSelect;
     currentSurah = surahSelect;
 
-    getAyah(currentSurah, currentAyah);
     getAyahAudio(currentSurah, currentAyah);
-  }
-
-  async function getAyah(surah, ayah) {
-    fetch(`http://api.alquran.cloud/v1/ayah/${surah}:${ayah}/en.asad`)
-      .then((response) => response.json())
-      .then((data) => {
-        currentAyahNumber = data.data.number;
-        currentAyahText = data.data.text;
-      });
   }
 
   function getSurahImages(surah, ayah) {
