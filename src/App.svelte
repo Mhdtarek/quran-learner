@@ -13,6 +13,7 @@
   let currentAyahNumber = 0;
   let currentAyahText = "";
   let currentRound = 0;
+  let currentAyahAudioPathUrl = "";
 
   function play() {
     // @ts-ignore
@@ -28,6 +29,7 @@
     currentSurah = surahSelect;
 
     getAyah(currentSurah, currentAyah);
+    getAyahAudio(currentSurah, currentAyah);
   }
 
   async function getAyah(surah, ayah) {
@@ -36,12 +38,23 @@
       .then((data) => {
         currentAyahNumber = data.data.number;
         currentAyahText = data.data.text;
-        currentAudioLoaded = true;
       });
   }
 
   function getSurahImages(surah, ayah) {
     return `http://cdn.islamic.network/quran/images/${surah}_${ayah}.png`;
+  }
+
+  function getAyahAudio(surah, ayah) {
+    let audioPath = "";
+
+    fetch(`https://api.quran.com/api/v4/recitations/7/by_ayah/${surah}:${ayah}`)
+      .then((response) => response.json())
+      .then((data) => {
+        audioPath = data.audio_files[0].url;
+        currentAyahAudioPathUrl = `https://verses.quran.com/${audioPath}`;
+        currentAudioLoaded = true;
+      });
   }
 
   function nextAyah() {
@@ -82,10 +95,7 @@
         <div>
           {#if currentAudioLoaded}
             <audio loop controls autoplay>
-              <source
-                src={`https://cdn.islamic.network/quran/audio/64/ar.alafasy/${currentAyahNumber}.mp3`}
-                type="audio/mpeg"
-              />
+              <source src={currentAyahAudioPathUrl} type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
           {/if}
