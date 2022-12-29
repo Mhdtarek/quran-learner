@@ -66,6 +66,7 @@
     currentAudioLoaded = false; // we do this so the audio can reset
 
     getAyah(currentSurah, currentAyah);
+    getAyahAudio(currentSurah, currentAyah);
   }
 
   function finished() {
