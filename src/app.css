@@ -1,10 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+main {
+  font-family: "Lato", sans-serif;
+  background-image: url("background.png");
+  height: 100vh;
+}
+header {
+  background-color: #eae2b7;
+  padding: 10px;
+}
 img {
-  width: 675px;
-  height: 80px;
+  background-color: #fbfffe;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+button.start {
+  border-radius: 5px;
+  width: 90px;
+  height: 50px;
+  border: 0px;
+  background-color: #fcbf49;
+  color: black;
+  font-size: 18px;
+  margin-top: 10px;
+}
+input.start {
+  border-radius: 4px;
+  height: 3vh;
+  border: 0px;
+  margin: 5px;
+  display: block;
+}
+label.start {
+  margin: 5px;
+  font-size: 2vh;
+  font-weight: 300;
+}
+.selectWrapper {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selectWrapperTwo {
+  padding: 20px;
+  background-color: #5ca0c3;
+  border-radius: 10px;
+}
+
+button.playing {
+  padding: 20px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: #c3925c;
+  color: white;
+  font-size: 18px;
+}
+.playingWrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.finishedWrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.finishedWrapperTwo {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fcbf49;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 500px) {
+  img {
+    width: 450px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  input.start {
+    border-radius: 4px;
+    height: 3vh;
+    border: 0px;
+    margin: 5px;
+    display: block;
+  }
+  label.start {
+    margin: 5px;
+    font-size: 2vh;
+    font-weight: 300;
+  }
 }
 @media only screen and (max-width: 430px) {
   img {
-    width: 400px;
-    height: 50px;
+    width: 390px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  input.start {
+    border-radius: 4px;
+    height: 3vh;
+    border: 0px;
+    margin: 5px;
+    display: block;
+  }
+  label.start {
+    margin: 5px;
+    font-size: 2vh;
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 384px) {
+  img {
+    width: 370px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  input.start {
+    border-radius: 4px;
+    height: 3vh;
+    border: 0px;
+    margin: 5px;
+    display: block;
+  }
+  label.start {
+    margin: 5px;
+    font-size: 2vh;
+    font-weight: 300;
   }
 }
